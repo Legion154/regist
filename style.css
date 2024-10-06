@@ -1,0 +1,14 @@
+.alert {
+    animation: animateAlert 0.7s forwards;
+}
+
+@keyframes animateAlert {
+    0% {
+        top: -50px;
+        opacity: 0;
+    }
+    100% {
+        top: 20px;
+        opacity: 1;
+    }
+}
