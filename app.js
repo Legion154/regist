@@ -18,7 +18,7 @@ form.addEventListener("submit", (e) => {
       document.getElementById("form").style.display = "flex"
       document.getElementsByTagName("body")[0].classList.replace("bg-[#161616]", "bg-[url('./home.images/preview.png')]")
       document.getElementById("loaded").style.display = "none"
-    }, 1000)
+    }, 2000)
   } else if (!userValue.value && !passwordValue.value) {
     showAlert("Password or username is not filled");
   } else {
@@ -34,7 +34,8 @@ function showAlert(message) {
   alert.style.display = "flex";
   txt.innerText = message;
 
-  cencel.addEventListener("click", () => {
+  cencel.addEventListener("click", (e) => {
+    e.preventDefault()
     alert.style.display = "none";
   });
 }
@@ -51,3 +52,19 @@ function hide(eye) {
     localStorage.setItem(eye, "none");
   }
 }
+
+function inrto() {
+  let second = document.getElementById("form");
+  let third = document.getElementById("loaded");
+
+  window.addEventListener("DOMContentLoaded", () => {
+    loader.style.display = "flex"
+    second.style.display = "none";
+    setTimeout(() => {
+    loader.style.display = "none"
+    second.style.display = "flex";
+    }, 1000);
+  });
+}
+
+inrto();
